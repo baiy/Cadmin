@@ -67,9 +67,9 @@ VALUES (1, 0, '系统设置', '', 'md-settings', '', 1),
        (20, 1, '权限管理', '', 'md-list', '', 2),
        (21, 20, '请求(action)', '/system/request', 'md-list', '', 1),
        (22, 20, '菜单', '/system/menu', 'md-menu', '', 2),
-       (23, 20, '权限组', '/system/auth', 'md-lock', '', 4);
+       (23, 20, '权限', '/system/auth', 'md-lock', '', 4);
 
-INSERT INTO `admin_menu_relate`(`admin_group_id`, `admin_menu_id`)
+INSERT INTO `admin_menu_relate`(`admin_auth_id`, `admin_menu_id`)
 VALUES (1, 1),
        (1, 10),
        (1, 11),
@@ -99,19 +99,19 @@ VALUES (1, 1, '登录', '/login', '\\Baiy\\Cadmin\\System\\Index::login'),
        (41, 1, '权限管理-菜单-排序', '/system/menu/sort', '\\Baiy\\Cadmin\\System\\Menu::sort'),
        (42, 1, '权限管理-菜单-保存', '/system/menu/save', '\\Baiy\\Cadmin\\System\\Menu::save'),
        (43, 1, '权限管理-菜单-删除', '/system/menu/remove', '\\Baiy\\Cadmin\\System\\Menu::remove'),
-       (60, 1, '权限管理-权限组-列表数据', '/system/auth/lists', '\\Baiy\\Cadmin\\System\\Auth::lists'),
-       (61, 1, '权限管理-权限组-保存', '/system/auth/save', '\\Baiy\\Cadmin\\System\\Auth::save'),
-       (62, 1, '权限管理-权限组-删除', '/system/auth/remove', '\\Baiy\\Cadmin\\System\\Auth::remove'),
-       (63, 1, '权限管理-权限组-获取请求分配信息', '/system/auth/getRequest', '\\Baiy\\Cadmin\\System\\Auth::getRequest'),
-       (64, 1, '权限管理-权限组-请求分配', '/system/auth/assignRequest', '\\Baiy\\Cadmin\\System\\Auth::assignRequest'),
-       (65, 1, '权限管理-权限组-移除请求分配', '/system/auth/removeRequest', '\\Baiy\\Cadmin\\System\\Auth::removeRequest'),
-       (70, 1, '权限管理-权限组-获取用户组分配信息', '/system/auth/getUserGroup', '\\Baiy\\Cadmin\\System\\Auth::getUserGroup'),
-       (71, 1, '权限管理-权限组-用户组分配', '/system/auth/assignUserGroup', '\\Baiy\\Cadmin\\System\\Auth::assignUserGroup'),
-       (72, 1, '权限管理-权限组-移除用户组分配', '/system/auth/removeUserGroup', '\\Baiy\\Cadmin\\System\\Auth::removeUserGroup'),
-       (73, 1, '权限管理-权限组-获取菜单分配信息', '/system/auth/getMenu', '\\Baiy\\Cadmin\\System\\Auth::getMenu'),
-       (74, 1, '权限管理-权限组-分配菜单', '/system/auth/assignMenu', '\\Baiy\\Cadmin\\System\\Auth::assignMenu');
+       (60, 1, '权限管理-权限-列表数据', '/system/auth/lists', '\\Baiy\\Cadmin\\System\\Auth::lists'),
+       (61, 1, '权限管理-权限-保存', '/system/auth/save', '\\Baiy\\Cadmin\\System\\Auth::save'),
+       (62, 1, '权限管理-权限-删除', '/system/auth/remove', '\\Baiy\\Cadmin\\System\\Auth::remove'),
+       (63, 1, '权限管理-权限-获取请求分配信息', '/system/auth/getRequest', '\\Baiy\\Cadmin\\System\\Auth::getRequest'),
+       (64, 1, '权限管理-权限-请求分配', '/system/auth/assignRequest', '\\Baiy\\Cadmin\\System\\Auth::assignRequest'),
+       (65, 1, '权限管理-权限-移除请求分配', '/system/auth/removeRequest', '\\Baiy\\Cadmin\\System\\Auth::removeRequest'),
+       (70, 1, '权限管理-权限-获取用户组分配信息', '/system/auth/getUserGroup', '\\Baiy\\Cadmin\\System\\Auth::getUserGroup'),
+       (71, 1, '权限管理-权限-用户组分配', '/system/auth/assignUserGroup', '\\Baiy\\Cadmin\\System\\Auth::assignUserGroup'),
+       (72, 1, '权限管理-权限-移除用户组分配', '/system/auth/removeUserGroup', '\\Baiy\\Cadmin\\System\\Auth::removeUserGroup'),
+       (73, 1, '权限管理-权限-获取菜单分配信息', '/system/auth/getMenu', '\\Baiy\\Cadmin\\System\\Auth::getMenu'),
+       (74, 1, '权限管理-权限-分配菜单', '/system/auth/assignMenu', '\\Baiy\\Cadmin\\System\\Auth::assignMenu');
 
-INSERT INTO `admin_request_group`(`admin_group_id`, `admin_request_id`)
+INSERT INTO `admin_request_relate`(`admin_auth_id`, `admin_request_id`)
 VALUES (1, 10),
        (1, 11),
        (1, 12),
@@ -148,6 +148,9 @@ VALUES (1, '超级管理员');
 
 INSERT INTO `admin_user_relate`(`admin_user_group_id`, `admin_user_id`)
 VALUES (1, 1);
+
+INSERT INTO `admin_user_group_relate`(`admin_auth_id`, `admin_user_group_id`)
+VALUES (1, 1),(2, 1);
 ```
 
 

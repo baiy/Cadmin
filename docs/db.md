@@ -11,7 +11,7 @@ CREATE TABLE `admin_auth`
     PRIMARY KEY (`id`) USING BTREE,
     KEY `name` (`name`) USING BTREE
 ) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4 COMMENT ='权限组';
+  DEFAULT CHARSET = utf8mb4 COMMENT ='权限';
 
 CREATE TABLE `admin_menu`
 (
@@ -38,7 +38,7 @@ CREATE TABLE `admin_menu_relate`
     PRIMARY KEY (`id`) USING BTREE,
     UNIQUE KEY `unique` (`admin_auth_id`, `admin_menu_id`) USING BTREE
 ) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4 COMMENT ='菜单权限组关联';
+  DEFAULT CHARSET = utf8mb4 COMMENT ='菜单权限关联';
 
 CREATE TABLE `admin_request`
 (
@@ -64,7 +64,7 @@ CREATE TABLE `admin_request_relate`
     PRIMARY KEY (`id`) USING BTREE,
     UNIQUE KEY `unique` (`admin_auth_id`, `admin_request_id`) USING BTREE
 ) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4 COMMENT ='请求权限组关联';
+  DEFAULT CHARSET = utf8mb4 COMMENT ='请求权限关联';
 
 CREATE TABLE `admin_user`
 (
@@ -91,7 +91,7 @@ CREATE TABLE `admin_user_relate`
     PRIMARY KEY (`id`) USING BTREE,
     UNIQUE KEY `unique` (`admin_user_group_id`, `admin_user_id`) USING BTREE
 ) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4 COMMENT ='用户分组关联';
+  DEFAULT CHARSET = utf8mb4 COMMENT ='用户组关联';
 
 CREATE TABLE `admin_user_group`
 (
@@ -103,7 +103,7 @@ CREATE TABLE `admin_user_group`
     PRIMARY KEY (`id`) USING BTREE,
     KEY `name` (`name`) USING BTREE
 ) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4 COMMENT ='用户分组';
+  DEFAULT CHARSET = utf8mb4 COMMENT ='用户组';
 
 CREATE TABLE `admin_user_group_relate`
 (
@@ -115,7 +115,7 @@ CREATE TABLE `admin_user_group_relate`
     PRIMARY KEY (`id`) USING BTREE,
     UNIQUE KEY `unique` (`admin_user_group_id`, `admin_auth_id`) USING BTREE
 ) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4 COMMENT ='用户分组权限关联';
+  DEFAULT CHARSET = utf8mb4 COMMENT ='用户组权限关联';
 
 CREATE TABLE `admin_token`
 (
