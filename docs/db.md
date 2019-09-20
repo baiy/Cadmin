@@ -40,31 +40,6 @@ CREATE TABLE `admin_menu_relate`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='菜单权限组关联';
 
-CREATE TABLE `admin_block`
-(
-    `id`          int(10) unsigned NOT NULL AUTO_INCREMENT,
-    `name`        varchar(100)     NOT NULL DEFAULT '',
-    `action`      varchar(100)     NOT NULL DEFAULT '',
-    `description` varchar(255)     NOT NULL DEFAULT '',
-    `create_time` timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time` timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    PRIMARY KEY (`id`) USING BTREE,
-    UNIQUE KEY `action` (`action`) USING BTREE
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4 COMMENT ='页面区块';
-
-CREATE TABLE `admin_block_relate`
-(
-    `id`                  int(10) unsigned NOT NULL AUTO_INCREMENT,
-    `admin_auth_id`       int(10) unsigned NOT NULL,
-    `admin_block_id`      int(10) unsigned NOT NULL,
-    `create_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    PRIMARY KEY (`id`) USING BTREE,
-    UNIQUE KEY `unique` (`admin_auth_id`, `admin_block_id`) USING BTREE
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4 COMMENT ='页面区块权限组关联';
-
 CREATE TABLE `admin_request`
 (
     `id`          int(10) unsigned    NOT NULL AUTO_INCREMENT,
