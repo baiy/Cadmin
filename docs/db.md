@@ -31,7 +31,7 @@ CREATE TABLE `admin_menu`
 CREATE TABLE `admin_menu_relate`
 (
     `id`                  int(10) unsigned NOT NULL AUTO_INCREMENT,
-    `admin_auth_id` int(10) unsigned NOT NULL,
+    `admin_auth_id`       int(10) unsigned NOT NULL,
     `admin_menu_id`       int(10) unsigned NOT NULL,
     `create_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
@@ -56,12 +56,12 @@ CREATE TABLE `admin_block`
 CREATE TABLE `admin_block_relate`
 (
     `id`                  int(10) unsigned NOT NULL AUTO_INCREMENT,
-    `admin_auth_id` int(10) unsigned NOT NULL,
+    `admin_auth_id`       int(10) unsigned NOT NULL,
     `admin_block_id`      int(10) unsigned NOT NULL,
     `create_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`) USING BTREE,
-    UNIQUE KEY `unique` (`admin_auth_id`, `admin_menu_id`) USING BTREE
+    UNIQUE KEY `unique` (`admin_auth_id`, `admin_block_id`) USING BTREE
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='页面区块权限组关联';
 
@@ -122,6 +122,7 @@ CREATE TABLE `admin_user_group`
 (
     `id`          int(10) unsigned NOT NULL AUTO_INCREMENT,
     `name`        varchar(100)     NOT NULL DEFAULT '',
+    `description` varchar(255)     NOT NULL DEFAULT '',
     `create_time` timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time` timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`) USING BTREE,
@@ -129,7 +130,7 @@ CREATE TABLE `admin_user_group`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='用户分组';
 
-CREATE TABLE `admin_user_auth`
+CREATE TABLE `admin_user_group_relate`
 (
     `id`                  int(10) unsigned NOT NULL AUTO_INCREMENT,
     `admin_user_group_id` int(10) unsigned NOT NULL,

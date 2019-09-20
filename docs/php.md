@@ -12,18 +12,10 @@ composer require baiy/cadmin
 ### 数据库
 
 #### 数据库结构导入
-详见 [数据库结构](db.md) 一章
+数据库结构详见 [数据库结构](db.md) 一章
 
-#### 数据库数据初始化
-```sql
-INSERT INTO `admin_group`(`id`, `name`) VALUES (1, '系统管理员');
-INSERT INTO `admin_user_group`(`id`, `admin_group_id`, `admin_user_id`) VALUES (3, 1, 1);
-INSERT INTO `admin_menu`(`id`, `parent_id`, `name`, `url`, `icon`, `description`, `sort`) VALUES (1, 0, '系统设置', '', 'md-settings', '', 0),(2, 1, '管理员设置', '/system/user', 'ios-people', '', 0),(3, 1, '权限管理', '', 'ios-list', '', 1),(4, 3, '请求管理', '/system/request', 'ios-list', '', 1),(5, 3, '权限组', '/system/group', 'ios-lock-outline', '', 0),(6, 3, '菜单管理', '/system/menu', 'md-menu', '', 2);
-INSERT INTO `admin_menu_group`(`id`, `admin_group_id`, `admin_menu_id`) VALUES (1, 1, 1),(2, 1, 2),(3, 1, 3),(4, 1, 4),(5, 1, 5),(7, 1, 6),(20, 2, 1),(25, 2, 2),(26, 2, 3),(27, 2, 4),(28, 2, 5),(29, 2, 6);
-INSERT INTO `admin_user`(`id`, `username`, `password`, `last_login_ip`, `last_login_time`, `status`) VALUES (1, 'admin', '$2y$10$ORNq20knqc0RgbIWZjKVkOOxNyGql0J/ztRhaumQkPMbkgWBbuSii', '127.0.0.1', '2000-10-10 10:10:10', 1);
-INSERT INTO `admin_request`(`id`, `type`, `name`, `action`, `call`) VALUES (1, 1, '登录', '/login', '\\Baiy\\Cadmin\\System\\Index::login'),(2, 1, '退出', '/logout', '\\Baiy\\Cadmin\\System\\Index::logout'),(3, 1, '初始数据加载', '/load', '\\Baiy\\Cadmin\\System\\Index::load'),(100, 1, '菜单管理-列表数据', '/system/menu/lists', '\\Baiy\\Cadmin\\System\\Menu::lists'),(101, 1, '菜单管理-排序', '/system/menu/sort', '\\Baiy\\Cadmin\\System\\Menu::sort'),(102, 1, '菜单管理-菜单保存', '/system/menu/save', '\\Baiy\\Cadmin\\System\\Menu::save'),(103, 1, '菜单管理-菜单删除', '/system/menu/remove', '\\Baiy\\Cadmin\\System\\Menu::remove'),(104, 1, '请求管理-请求保存', '/system/request/save', '\\Baiy\\Cadmin\\System\\Request::save'),(105, 1, '请求管理-请求删除', '/system/request/remove', '\\Baiy\\Cadmin\\System\\Request::remove'),(106, 1, '请求管理-列表数据', '/system/request/lists', '\\Baiy\\Cadmin\\System\\Request::lists'),(107, 1, '管理员设置-列表数据', '/system/user/lists', '\\Baiy\\Cadmin\\System\\User::lists'),(108, 1, '管理员设置-用户保存', '/system/user/save', '\\Baiy\\Cadmin\\System\\User::save'),(109, 1, '管理员设置-用户删除', '/system/user/remove', '\\Baiy\\Cadmin\\System\\User::remove'),(110, 1, '管理员设置-获取用户分组', '/system/auth/getGroupByUser', '\\Baiy\\Cadmin\\System\\Auth::getGroupByUser'),(111, 1, '管理员设置-关联分组', '/system/auth/relateGroupToUser', '\\Baiy\\Cadmin\\System\\Auth::relateGroupToUser'),(112, 1, '权限管理-列表数据', '/system/group/lists', '\\Baiy\\Cadmin\\System\\Group::lists'),(113, 1, '权限管理-分组保存', '/system/group/save', '\\Baiy\\Cadmin\\System\\Group::save'),(114, 1, '权限管理-分组删除', '/system/group/remove', '\\Baiy\\Cadmin\\System\\Group::remove'),(115, 1, '权限管理-获取分配请求数据', '/system/auth/getRequest', '\\Baiy\\Cadmin\\System\\Auth::getRequest'),(116, 1, '权限管理-分配请求', '/system/auth/assignRequest', '\\Baiy\\Cadmin\\System\\Auth::assignRequest'),(117, 1, '权限管理-移除分配请求', '/system/auth/removeRequest', '\\Baiy\\Cadmin\\System\\Auth::removeRequest'),(118, 1, '权限管理-获取菜单分配数据', '/system/auth/getMenu', '\\Baiy\\Cadmin\\System\\Auth::getMenu'),(119, 1, '权限管理-分配菜单', '/system/auth/assignMenu', '\\Baiy\\Cadmin\\System\\Auth::assignMenu'),(120, 1, '权限管理-获取关联用户数据', '/system/auth/getUserByGroup', '\\Baiy\\Cadmin\\System\\Auth::getUserByGroup');
-INSERT INTO `admin_request_group`(`id`, `admin_group_id`, `admin_request_id`) VALUES (1, 1, 100),(2, 1, 101),(3, 1, 102),(4, 1, 103),(5, 1, 104),(6, 1, 105),(7, 1, 106),(8, 1, 107),(9, 1, 108),(10, 1, 109),(11, 1, 110),(12, 1, 111),(13, 1, 112),(14, 1, 113),(15, 1, 114),(16, 1, 115),(17, 1, 116),(18, 1, 117),(19, 1, 118),(20, 1, 119),(22, 1, 120),(24, 2, 118),(25, 2, 117),(26, 2, 116),(27, 2, 120);
-```
+数据库数据详见 [数据库数据](/php?id=数据库数据)
+
 > 默认后台账号密码: `admin` / `123456`
 
 ### 适配器
@@ -37,7 +29,7 @@ INSERT INTO `admin_request_group`(`id`, `admin_group_id`, `admin_request_id`) VA
 1. 业务方法执行
 1. 相应输出
 
-#### 适配器
+#### 适配器开发
 > 可以[点击这里](https://github.com/baiy/Cadmin-service-php/tree/master/src/Adapter) 查看系统内置的适配器代码
 
 ### 使用方法
@@ -47,19 +39,129 @@ INSERT INTO `admin_request_group`(`id`, `admin_group_id`, `admin_request_id`) VA
 > 代码插入位置: `/route/app.php`
  
 ```php
-$handle = \Baiy\Cadmin\Handle::instance();
-$handle->setAdapter(new \Baiy\Cadmin\Adapter\Think60\Adapter());
-//$handle->setDebug(config('app.debug')); // 系统调试标示[可选]
-//$handle->addNoCheckLoginRequestId($id); // 无需校验权限的api[可选]
-//$handle->addOnlyLoginRequestId($id); // 只需登录即可访问的api[可选]
-//$handle->setLogCallback(function(array $content){}); // 请求日志记录回调函数[可选]
-//$handle->setDbConnection($name); // 数据库连接标示[可选]
-$handle->router('/api/'); // api入口路由注册 请求记住此入口url
+<?php
+$admin = \Baiy\Cadmin\Admin::instance();
+$admin->setAdapter(new \Baiy\Cadmin\Adapter\Think60\Adapter());
+//$admin->setDebug(config('app.debug')); // 系统调试标示[可选]
+//$admin->addNoCheckLoginRequestId($id); // 无需校验权限的api[可选]
+//$admin->addOnlyLoginRequestId($id); // 只需登录即可访问的api[可选]
+//$admin->setLogCallback(function(array $content){}); // 请求日志记录回调函数[可选]
+//$admin->setDbConnection($name); // 数据库连接标示[可选]
+$admin->router('/api/'); // api入口路由注册 请求记住此入口url
 ```
 
 
 
-### 其他问题
-#### 请求日志数据结构
+### 其他说明
+#### 数据库数据
+```sql
+INSERT INTO `admin_auth`(`id`, `name`)
+VALUES (1, '系统设置-用户管理'),
+       (2, '系统设置-权限管理');
+
+INSERT INTO `admin_menu`(`id`, `parent_id`, `name`, `url`, `icon`, `description`, `sort`)
+VALUES (1, 0, '系统设置', '', 'md-settings', '', 1),
+       (10, 1, '用户管理', '', 'md-contacts', '', 1),
+       (11, 10, '用户', '/system/user', 'md-person', '', 1),
+       (12, 10, '用户组', '/system/userGroup', 'md-people', '', 2),
+       (20, 1, '权限管理', '', 'md-list', '', 2),
+       (21, 20, '请求', '/system/request', 'md-list', '', 1),
+       (22, 20, '菜单', '/system/menu', 'md-menu', '', 2),
+       (23, 20, '区块', '/system/block', 'md-albums', '', 3),
+       (24, 20, '权限组', '/system/auth', 'md-lock', '', 4);
+
+INSERT INTO `admin_menu_relate`(`admin_group_id`, `admin_menu_id`)
+VALUES (1, 1),
+       (1, 10),
+       (1, 11),
+       (1, 12),
+       (2, 20),
+       (2, 21),
+       (2, 22),
+       (2, 23),
+       (2, 24);
+
+INSERT INTO `admin_request`(`id`, `type`, `name`, `action`, `call`)
+VALUES (1, 1, '登录', '/login', '\\Baiy\\Cadmin\\System\\Index::login'),
+       (2, 1, '退出', '/logout', '\\Baiy\\Cadmin\\System\\Index::logout'),
+       (3, 1, '初始数据加载', '/load', '\\Baiy\\Cadmin\\System\\Index::load'),
+       (10, 1, '用户管理-用户-列表数据', '/system/user/lists', '\\Baiy\\Cadmin\\System\\User::lists'),
+       (11, 1, '用户管理-用户-保存', '/system/user/save', '\\Baiy\\Cadmin\\System\\User::save'),
+       (12, 1, '用户管理-用户-删除', '/system/user/remove', '\\Baiy\\Cadmin\\System\\User::remove'),
+       (20, 1, '用户管理-用户组-列表数据', '/system/userGroup/lists', '\\Baiy\\Cadmin\\System\\UserGroup::lists'),
+       (21, 1, '用户管理-用户组-保存', '/system/userGroup/save', '\\Baiy\\Cadmin\\System\\UserGroup::save'),
+       (22, 1, '用户管理-用户组-删除', '/system/userGroup/remove', '\\Baiy\\Cadmin\\System\\UserGroup::remove'),
+       (23, 1, '用户管理-用户组-获取用户分组信息', '/system/userGroup/getUser', '\\Baiy\\Cadmin\\System\\UserGroup::getUser'),
+       (24, 1, '用户管理-用户组-用户分配', '/system/userGroup/assignUser', '\\Baiy\\Cadmin\\System\\UserGroup::assignUser'),
+       (25, 1, '用户管理-用户组-移除用户分配', '/system/userGroup/removeUser', '\\Baiy\\Cadmin\\System\\UserGroup::removeUser'),
+       (30, 1, '权限管理-请求-列表数据', '/system/request/lists', '\\Baiy\\Cadmin\\System\\Request::lists'),
+       (31, 1, '权限管理-请求-保存', '/system/request/save', '\\Baiy\\Cadmin\\System\\Request::save'),
+       (32, 1, '权限管理-请求-删除', '/system/request/remove', '\\Baiy\\Cadmin\\System\\Request::remove'),
+       (40, 1, '权限管理-菜单-列表数据', '/system/menu/lists', '\\Baiy\\Cadmin\\System\\Menu::lists'),
+       (41, 1, '权限管理-菜单-排序', '/system/menu/sort', '\\Baiy\\Cadmin\\System\\Menu::sort'),
+       (42, 1, '权限管理-菜单-保存', '/system/menu/save', '\\Baiy\\Cadmin\\System\\Menu::save'),
+       (43, 1, '权限管理-菜单-删除', '/system/menu/remove', '\\Baiy\\Cadmin\\System\\Menu::remove'),
+       (50, 1, '权限管理-区块-列表数据', '/system/block/lists', '\\Baiy\\Cadmin\\System\\Block::lists'),
+       (51, 1, '权限管理-区块-保存', '/system/block/save', '\\Baiy\\Cadmin\\System\\Block::save'),
+       (52, 1, '权限管理-区块-删除', '/system/block/remove', '\\Baiy\\Cadmin\\System\\Block::remove'),
+       (60, 1, '权限管理-权限组-列表数据', '/system/auth/lists', '\\Baiy\\Cadmin\\System\\Auth::lists'),
+       (61, 1, '权限管理-权限组-保存', '/system/auth/save', '\\Baiy\\Cadmin\\System\\Auth::save'),
+       (62, 1, '权限管理-权限组-删除', '/system/auth/remove', '\\Baiy\\Cadmin\\System\\Auth::remove'),
+       (63, 1, '权限管理-权限组-获取请求分配信息', '/system/auth/getRequest', '\\Baiy\\Cadmin\\System\\Auth::getRequest'),
+       (64, 1, '权限管理-权限组-请求分配', '/system/auth/assignRequest', '\\Baiy\\Cadmin\\System\\Auth::assignRequest'),
+       (65, 1, '权限管理-权限组-移除请求分配', '/system/auth/removeRequest', '\\Baiy\\Cadmin\\System\\Auth::removeRequest'),
+       (67, 1, '权限管理-权限组-获取区块分配信息', '/system/auth/getBlock', '\\Baiy\\Cadmin\\System\\Auth::getBlock'),
+       (68, 1, '权限管理-权限组-区块分配', '/system/auth/assignBlock', '\\Baiy\\Cadmin\\System\\Auth::assignBlock'),
+       (69, 1, '权限管理-权限组-移除区块分配', '/system/auth/removeBlock', '\\Baiy\\Cadmin\\System\\Auth::removeBlock'),
+       (70, 1, '权限管理-权限组-获取用户组分配信息', '/system/auth/getUserGroup', '\\Baiy\\Cadmin\\System\\Auth::getUserGroup'),
+       (71, 1, '权限管理-权限组-用户组分配', '/system/auth/assignUserGroup', '\\Baiy\\Cadmin\\System\\Auth::assignUserGroup'),
+       (72, 1, '权限管理-权限组-移除用户组分配', '/system/auth/removeUserGroup', '\\Baiy\\Cadmin\\System\\Auth::removeUserGroup'),
+       (73, 1, '权限管理-权限组-获取菜单分配信息', '/system/auth/getMenu', '\\Baiy\\Cadmin\\System\\Auth::getMenu'),
+       (74, 1, '权限管理-权限组-分配菜单', '/system/auth/assignMenu', '\\Baiy\\Cadmin\\System\\Auth::assignMenu');
+
+INSERT INTO `admin_request_group`(`admin_group_id`, `admin_request_id`)
+VALUES (1, 10),
+       (1, 11),
+       (1, 12),
+       (1, 20),
+       (1, 21),
+       (1, 22),
+       (1, 23),
+       (1, 24),
+       (1, 25),
+       (2, 30),
+       (2, 31),
+       (2, 32),
+       (2, 40),
+       (2, 41),
+       (2, 42),
+       (2, 43),
+       (2, 50),
+       (2, 51),
+       (2, 52),
+       (2, 60),
+       (2, 61),
+       (2, 62),
+       (2, 63),
+       (2, 64),
+       (2, 65),
+       (2, 67),
+       (2, 68),
+       (2, 69),
+       (2, 70),
+       (2, 71),
+       (2, 72),
+       (2, 73),
+       (2, 74);
+
+INSERT INTO `admin_user`(`id`, `username`, `password`)
+VALUES (1, 'admin', '$2y$10$ORNq20knqc0RgbIWZjKVkOOxNyGql0J/ztRhaumQkPMbkgWBbuSii');
+
+INSERT INTO `admin_user_group`(`id`, `name`)
+VALUES (1, '超级管理员');
+
+INSERT INTO `admin_user_relate`(`admin_user_group_id`, `admin_user_id`)
+VALUES (1, 1);
+```
 
 
