@@ -5,16 +5,20 @@
 ```html
 <username :id="1" default="未知用户" />
 ```
-> `id`:用户ID `default`:用户不存在显示文字
+> `id`:用户ID 
+>
+>`default`:用户不存在显示文字
 
-#### 当前用户指定请求(action)权限判断标签
+#### 权限检查
 ```html
 <auth-check action="/system/auth/assignMenu">
-    <span>有权限是展示</span>
+    有权限是展示
     <span slot="without">无权限时展示</span>
 </auth-check>
 ```
 > `without` 插槽为可选
+>
+> 常用于根据用户指定请求(action)的权限判断结果展示不同的内容
 
 #### 输入框式文件上传
 ```html
@@ -26,3 +30,14 @@
 <table-lists></table-lists>
 ```
 > 该组件集成筛选框/表格/分页等功能
+
+#### 字段映射
+```js
+let map = [{v: 1, n: '启用'},{v: 2, n: '禁用'}]
+```
+```html
+<field-map value="2" :map="map" valueField="v" descField=n"" />
+```
+> 以上代码输出:`禁用`
+>
+> 该组件常与映射字段的页面输出  `valueField`/`descField` 为可选

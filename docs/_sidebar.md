@@ -5,11 +5,15 @@
   - [权限控制](auth.md)
 
 - 服务端
-  - [数据库结构](db.md)
-  - [PHP](php.md)
+  - [数据库](server/db.md)
+  - [PHP](server/php.md)
 
 - 客户端
-  - [vue](vue.md)
+  - [vue](client/vue.md)
   
-- [前后端接口定义](api.md)
+- 前后端接口定义
+  - [请求说明](api/README.md)
+  - [初始化](api/init.md)
+  - [用户相关](api/user.md)
+  - [权限相关](api/auth.md)
 
