@@ -6,10 +6,10 @@
 
 - 服务端
   - [数据库](server/db.md)
-  - [PHP](server/php.md)
+  - [PHP服务端](server/php.md)
 
 - 客户端
-  - [vue](client/vue.md)
+  - [VUE客户端](client/vue.md)
   
 - 前后端接口定义
   - [请求说明](api/README.md)

@@ -1,10 +1,13 @@
-### 特点
-1. 内置用户/权限/菜单等基础功能
-1. 使用适配器与外层系统进行对接, 减少外层系统的侵入. 内置`Thinkphp`/`Laravel`适配器, 对于其他php框架和系统可自行编写适配器.
+Cadmin的服务端实现 php
 
 > 项目地址: [https://github.com/baiy/Cadmin-service-php](https://github.com/baiy/Cadmin-service-php)
 
+### 特点
+
+使用适配器与外层系统进行对接, 减少外层系统的侵入. 内置`Thinkphp`/`Laravel`适配器, 对于其他php框架和系统可自行编写适配器.
+
 ### 安装
+
 ```
 composer require baiy/cadmin
 ```
@@ -12,9 +15,9 @@ composer require baiy/cadmin
 ### 数据库
 
 #### 数据库结构导入
-数据库结构详见 [数据库结构](db.md) 一章
+数据库结构详见 [数据库结构](server/db.md) 一章
 
-数据库数据详见 [数据库数据](/php?id=数据库数据)
+数据库数据详见 [数据库数据](server/php.md?id=数据库数据)
 
 > 默认后台账号密码: `admin` / `123456`
 
