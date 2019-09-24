@@ -11,7 +11,7 @@
 - 客户端
   - [VUE客户端](client/vue.md)
   
-- 前后端接口定义
+- 前后端交互接口协议
   - [请求说明](api/README.md)
   - [初始化](api/init.md)
   - [用户相关](api/user.md)
