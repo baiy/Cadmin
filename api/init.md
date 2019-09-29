@@ -45,7 +45,7 @@
 | user |object| 当前登录用户信息 |
 | allUser| array | 系统所有用户的信息 |
 | menu | array|用户已授权菜单数据(无需排序) |
-| request| array | 用户已授权请求action数据 |
+| request| array | 用户已授权请求数据 |
 
 ```json
 {
