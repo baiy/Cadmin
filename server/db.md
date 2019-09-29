@@ -43,7 +43,7 @@ CREATE TABLE `admin_menu_relate`
 CREATE TABLE `admin_request`
 (
     `id`          int(10) unsigned    NOT NULL AUTO_INCREMENT,
-    `type`        tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '请求类型',
+    `type`        varchar(50)         NOT NULL DEFAULT 'default' COMMENT '请求类型',
     `name`        varchar(100)        NOT NULL DEFAULT '' COMMENT '名称',
     `action`      varchar(100)        NOT NULL DEFAULT '' COMMENT 'action',
     `call`        varchar(100)        NOT NULL DEFAULT '' COMMENT '类型配置',

@@ -130,7 +130,7 @@
     "lists": [
         {
             "id": 74,
-            "type": 1,
+            "type": "default",
             "name": "权限管理-权限组-分配菜单",
             "action": "\/system\/auth\/assignMenu",
             "call": "\\Baiy\\Cadmin\\System\\Auth::assignMenu",
@@ -148,7 +148,7 @@
         },
         {
             "id": 73,
-            "type": 1,
+            "type": "default",
             "name": "权限管理-权限组-获取菜单分配信息",
             "action": "\/system\/auth\/getMenu",
             "call": "\\Baiy\\Cadmin\\System\\Auth::getMenu",
@@ -235,7 +235,7 @@
             "request": [
                 {
                     "id": 30,
-                    "type": 1,
+                    "type": "default",
                     "name": "权限管理-请求-列表数据",
                     "action": "\/system\/request\/lists",
                     "call": "\\Baiy\\Cadmin\\System\\Request::lists",
@@ -330,7 +330,7 @@
         "assign": [
             {
                 "id": 74,
-                "type": 1,
+                "type": "default",
                 "name": "权限管理-权限组-分配菜单",
                 "action": "\/system\/auth\/assignMenu",
                 "call": "\\Baiy\\Cadmin\\System\\Auth::assignMenu",
@@ -341,7 +341,7 @@
         "noAssign": [
             {
                 "id": 25,
-                "type": 1,
+                "type": "default",
                 "name": "用户管理-用户组-移除用户分配",
                 "action": "\/system\/userGroup\/removeUser",
                 "call": "\\Baiy\\Cadmin\\System\\UserGroup::removeUser",

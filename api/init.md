@@ -85,7 +85,7 @@
     "request": [
         {
             "id": 10,
-            "type": 1,
+            "type": "default",
             "name": "用户管理-用户-列表数据",
             "action": "\/system\/user\/lists",
             "call": "\\Baiy\\Cadmin\\System\\User::lists",
