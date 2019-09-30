@@ -133,7 +133,7 @@
             "type": "default",
             "name": "权限管理-权限组-分配菜单",
             "action": "\/system\/auth\/assignMenu",
-            "call": "\\Baiy\\Cadmin\\System\\Auth::assignMenu",
+            "call": "Baiy.Cadmin.System.Auth.assignMenu",
             "create_time": "2019-09-20 16:26:13",
             "update_time": "2019-09-20 18:56:57",
             "auth": [
@@ -151,7 +151,7 @@
             "type": "default",
             "name": "权限管理-权限组-获取菜单分配信息",
             "action": "\/system\/auth\/getMenu",
-            "call": "\\Baiy\\Cadmin\\System\\Auth::getMenu",
+            "call": "Baiy.Cadmin.System.Auth.getMenu",
             "create_time": "2019-09-20 16:26:13",
             "update_time": "2019-09-20 16:26:13",
             "auth": [
@@ -256,7 +256,7 @@
                     "type": "default",
                     "name": "权限管理-请求-列表数据",
                     "action": "\/system\/request\/lists",
-                    "call": "\\Baiy\\Cadmin\\System\\Request::lists",
+                    "call": "Baiy.Cadmin.System.Request.lists",
                     "create_time": "2019-09-20 16:26:13",
                     "update_time": "2019-09-20 16:26:13"
                 }
@@ -351,7 +351,7 @@
                 "type": "default",
                 "name": "权限管理-权限组-分配菜单",
                 "action": "\/system\/auth\/assignMenu",
-                "call": "\\Baiy\\Cadmin\\System\\Auth::assignMenu",
+                "call": "Baiy.Cadmin.System.Auth.assignMenu",
                 "create_time": "2019-09-20 16:26:13",
                 "update_time": "2019-09-20 18:56:57"
             }
@@ -362,7 +362,7 @@
                 "type": "default",
                 "name": "用户管理-用户组-移除用户分配",
                 "action": "\/system\/userGroup\/removeUser",
-                "call": "\\Baiy\\Cadmin\\System\\UserGroup::removeUser",
+                "call": "Baiy.Cadmin.System.UserGroup.removeUser",
                 "create_time": "2019-09-20 16:26:13",
                 "update_time": "2019-09-20 16:26:13"
             }

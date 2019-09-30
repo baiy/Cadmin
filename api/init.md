@@ -46,6 +46,8 @@
 | allUser| array | 系统所有用户的信息 |
 | menu | array|用户已授权菜单数据(无需排序) |
 | request| array | 用户已授权请求数据 |
+| auth| array | 用户已授权权限 |
+| userGroup| array | 用户已授权用户组 |
 
 ```json
 {
@@ -88,11 +90,29 @@
             "type": "default",
             "name": "用户管理-用户-列表数据",
             "action": "\/system\/user\/lists",
-            "call": "\\Baiy\\Cadmin\\System\\User::lists",
+            "call": "Baiy.Cadmin.System.User.lists",
             "create_time": "2019-09-20 16:26:13",
             "update_time": "2019-09-20 16:26:13"
         }
-    ]
+    ],
+    "auth": [
+        {
+            "id": 1,
+            "create_time": "2019-09-20 16:26:13",
+            "update_time": "2019-09-20 16:26:13",
+            "name": "系统设置-用户管理",
+            "description": ""
+        }
+    ],
+    "userGroup": [
+         {
+             "id": 1,
+             "create_time": "2019-09-20 16:26:13",
+             "update_time": "2019-09-20 17:42:41",
+             "name": "超级管理员",
+             "description": "123123123143423"
+         }
+     ]
 }
 ```
 

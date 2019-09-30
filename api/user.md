@@ -19,7 +19,7 @@
 | 参数 | 类型|描述 |
 | --- | --- | --- |
 | lists |array | 用户列表数据 |
-| lists.group | array | 用户关联的用户组信息 |
+| lists.userGroup | array | 用户关联的用户组信息 |
 | total | int | 列表总数 |
 
 ```json
@@ -33,7 +33,7 @@
             "status": 1,
             "create_time": "2019-09-20 16:26:13",
             "update_time": "2019-09-23 18:36:02",
-            "group": [
+            "userGroup": [
                 {
                     "id": 1,
                     "name": "超级管理员",
