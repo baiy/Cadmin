@@ -1,6 +1,6 @@
 Cadmin的服务端实现 php
 
-> 项目地址: [https://github.com/baiy/Cadmin-service-php](https://github.com/baiy/Cadmin-service-php)
+> 项目地址: [https://github.com/baiy/Cadmin-server-php](https://github.com/baiy/Cadmin-server-php)
 
 ### 特点
 
@@ -32,7 +32,7 @@ composer require baiy/cadmin
 1. 相应输出
 
 #### 适配器开发
-> 可以[点击这里](https://github.com/baiy/Cadmin-service-php/tree/master/src/Adapter) 查看系统内置的适配器代码
+> 可以[点击这里](https://github.com/baiy/Cadmin-server-php/tree/master/src/Adapter) 查看系统内置的适配器代码
 
 ### 使用方法
 > 在代码安装和数据库导入完毕后, 接下来需要将后台系统的入口代码嵌入当前系统的合适位置, 并进行相应的配置, 下面提供`Thinkphp`/`Laravel`框架具体使用方法
