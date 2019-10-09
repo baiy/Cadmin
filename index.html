@@ -40,11 +40,13 @@
         plugins: [
             function (hook, vm) {
                 hook.afterEach(function (html) {
+                    let file = "https://github.com/baiy/Cadmin/blob/master/"+ vm.route.file
+                    if (vm.route.file.indexOf("https://") === -1){
+                        file = file.replace(/raw.githubusercontent.com/,"github.com").replace(/\/master\//,"/blob/master/")
+                    }
                     return [
                         '<div style="overflow: auto">',
-                        '<p style="float: right"><a href="',
-                        'https://github.com/baiy/Cadmin/blob/master/'+vm.route.file,
-                        '" target="_blank">',
+                        '<p style="float: right"><a href="'+file+'" target="_blank">',
                         'Edit on github',
                         '</a></p>',
                         '</div>'
@@ -52,7 +54,6 @@
                 })
             },
         ]
-        // coverpage: true,
     }
 </script>
 <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
