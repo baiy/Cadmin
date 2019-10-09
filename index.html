@@ -41,7 +41,9 @@
             function (hook, vm) {
                 hook.afterEach(function (html) {
                     let file = "https://github.com/baiy/Cadmin/blob/master/" + vm.route.file
+                    console.log(vm.route.file.indexOf("https://"))
                     if (vm.route.file.indexOf("https://") !== -1){
+                        console.log(file.replace(/raw.githubusercontent.com/,"github.com"))
                         file = file.replace(/raw.githubusercontent.com/,"github.com").replace(/\/master\//,"/blob/master/")
                     }
                     return [
