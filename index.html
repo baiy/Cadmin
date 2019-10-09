@@ -40,8 +40,8 @@
         plugins: [
             function (hook, vm) {
                 hook.afterEach(function (html) {
-                    let file = "https://github.com/baiy/Cadmin/blob/master/"+ vm.route.file
-                    if (vm.route.file.indexOf("https://") === -1){
+                    let file = "https://github.com/baiy/Cadmin/blob/master/" + vm.route.file
+                    if (vm.route.file.indexOf("https://") !== -1){
                         file = file.replace(/raw.githubusercontent.com/,"github.com").replace(/\/master\//,"/blob/master/")
                     }
                     return [
