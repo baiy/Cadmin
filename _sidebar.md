@@ -7,6 +7,7 @@
 - 服务端
   - [数据库](server/db.md)
   - [PHP服务端](server/php.md)
+  - [Golang服务端](server/go.md)
 
 - 客户端
   - [VUE客户端](client/vue.md)
