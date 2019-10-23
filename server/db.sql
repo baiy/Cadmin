@@ -160,6 +160,7 @@ INSERT INTO `admin_request`(`id`, `type`, `name`, `action`, `call`)
 VALUES (1, 'default', '登录', '/login', 'Baiy.Cadmin.System.Index.login'),
        (2, 'default', '退出', '/logout', 'Baiy.Cadmin.System.Index.logout'),
        (3, 'default', '初始数据加载', '/load', 'Baiy.Cadmin.System.Index.load'),
+       (4, 'default', '当前用户编辑', '/current/user/setting', 'Baiy.Cadmin.System.User.currentSetting'),
        (10, 'default', '用户管理-用户-列表数据', '/system/user/lists', 'Baiy.Cadmin.System.User.lists'),
        (11, 'default', '用户管理-用户-保存', '/system/user/save', 'Baiy.Cadmin.System.User.save'),
        (12, 'default', '用户管理-用户-删除', '/system/user/remove', 'Baiy.Cadmin.System.User.remove'),
