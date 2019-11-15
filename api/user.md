@@ -31,6 +31,7 @@
             "last_login_ip": "0.0.0.0",
             "last_login_time": "2019-09-23 18:36:02",
             "status": 1,
+            "description": "",
             "create_time": "2019-09-20 16:26:13",
             "update_time": "2019-09-23 18:36:02",
             "userGroup": [
@@ -125,6 +126,7 @@
                     "last_login_ip": "0.0.0.0",
                     "last_login_time": "2019-09-23 18:36:02",
                     "status": 1,
+                    "description": "",
                     "create_time": "2019-09-20 16:26:13",
                     "update_time": "2019-09-23 18:36:02"
                 }
@@ -196,6 +198,7 @@
                 "last_login_ip": "0.0.0.0",
                 "last_login_time": "2019-09-23 18:36:02",
                 "status": 1,
+                "description": "",
                 "create_time": "2019-09-20 16:26:13",
                 "update_time": "2019-09-23 18:36:02"
             }
@@ -205,8 +208,9 @@
                 "id": 2,
                 "username": "test",
                 "last_login_ip": "",
-                "last_login_time": null,
+                "last_login_time": "",
                 "status": 1,
+                "description": "",
                 "create_time": "2019-09-20 18:13:35",
                 "update_time": "2019-09-20 18:13:35"
             }

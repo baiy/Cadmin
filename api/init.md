@@ -57,6 +57,7 @@
         "last_login_ip": "0.0.0.0",
         "last_login_time": "2019-09-23 18:16:30",
         "status": 1,
+        "description": "",
         "create_time": "2019-09-20 16:26:13",
         "update_time": "2019-09-23 18:16:30"
     },
@@ -67,6 +68,7 @@
             "last_login_ip": "0.0.0.0",
             "last_login_time": "2019-09-23 18:16:30",
             "status": 1,
+            "description": "",
             "create_time": "2019-09-20 16:26:13",
             "update_time": "2019-09-23 18:16:30"
         }

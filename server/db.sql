@@ -27,11 +27,11 @@ CREATE TABLE `admin_menu`
 
 CREATE TABLE `admin_menu_relate`
 (
-    `id`                  int(10) unsigned NOT NULL AUTO_INCREMENT,
-    `admin_auth_id`       int(10) unsigned NOT NULL,
-    `admin_menu_id`       int(10) unsigned NOT NULL,
-    `create_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    `id`            int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `admin_auth_id` int(10) unsigned NOT NULL,
+    `admin_menu_id` int(10) unsigned NOT NULL,
+    `create_time`   timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `update_time`   timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`) USING BTREE,
     UNIQUE KEY `unique` (`admin_auth_id`, `admin_menu_id`) USING BTREE
 ) ENGINE = InnoDB
@@ -39,13 +39,13 @@ CREATE TABLE `admin_menu_relate`
 
 CREATE TABLE `admin_request`
 (
-    `id`          int(10) unsigned    NOT NULL AUTO_INCREMENT,
-    `type`        varchar(50)         NOT NULL DEFAULT 'default' COMMENT '请求类型',
-    `name`        varchar(100)        NOT NULL DEFAULT '' COMMENT '名称',
-    `action`      varchar(100)        NOT NULL DEFAULT '' COMMENT 'action',
-    `call`        varchar(100)        NOT NULL DEFAULT '' COMMENT '类型配置',
-    `create_time` timestamp           NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time` timestamp           NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    `id`          int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `type`        varchar(50)      NOT NULL DEFAULT 'default' COMMENT '请求类型',
+    `name`        varchar(100)     NOT NULL DEFAULT '' COMMENT '名称',
+    `action`      varchar(100)     NOT NULL DEFAULT '' COMMENT 'action',
+    `call`        varchar(100)     NOT NULL DEFAULT '' COMMENT '类型配置',
+    `create_time` timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `update_time` timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`) USING BTREE,
     UNIQUE KEY `action` (`action`) USING BTREE
 ) ENGINE = InnoDB
@@ -53,11 +53,11 @@ CREATE TABLE `admin_request`
 
 CREATE TABLE `admin_request_relate`
 (
-    `id`                  int(10) unsigned NOT NULL AUTO_INCREMENT,
-    `admin_auth_id` int(10) unsigned NOT NULL,
-    `admin_request_id`    int(10) unsigned NOT NULL,
-    `create_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    `id`               int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `admin_auth_id`    int(10) unsigned NOT NULL,
+    `admin_request_id` int(10) unsigned NOT NULL,
+    `create_time`      timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `update_time`      timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`) USING BTREE,
     UNIQUE KEY `unique` (`admin_auth_id`, `admin_request_id`) USING BTREE
 ) ENGINE = InnoDB
@@ -71,6 +71,7 @@ CREATE TABLE `admin_user`
     `last_login_ip`   varchar(15)         NOT NULL DEFAULT '' COMMENT '最后登录IP',
     `last_login_time` timestamp           NULL     DEFAULT NULL COMMENT '最后登录时间',
     `status`          tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '状态',
+    `description`     varchar(150)        NOT NULL DEFAULT '' COMMENT '描述',
     `create_time`     timestamp           NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time`     timestamp           NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`) USING BTREE,
@@ -106,7 +107,7 @@ CREATE TABLE `admin_user_group_relate`
 (
     `id`                  int(10) unsigned NOT NULL AUTO_INCREMENT,
     `admin_user_group_id` int(10) unsigned NOT NULL,
-    `admin_auth_id` int(10) unsigned NOT NULL,
+    `admin_auth_id`       int(10) unsigned NOT NULL,
     `create_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time`         timestamp        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`) USING BTREE,
@@ -127,11 +128,9 @@ CREATE TABLE `admin_token`
     KEY `expire_time` (`expire_time`) USING BTREE
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='登录token';
-```
 
 ## 数据库数据
 
-```sql
 INSERT INTO `admin_auth`(`id`, `name`)
 VALUES (1, '系统设置-用户管理'),
        (2, '系统设置-权限管理');
@@ -221,7 +220,8 @@ VALUES (1, 10),
        (2, 74);
 
 INSERT INTO `admin_user`(`id`, `username`, `password`)
-VALUES (1, 'admin', 'ZjU3NzE5ZWU3OWFlYjQ1MzMyNzI1NTI5NDNlNzZiZjk3ZGVlNWMwZDRkMTU1ZDRiOThlNWUwMjRmOGZlMmZmZnwxanVlYXEyOQ==');
+VALUES (1, 'admin',
+        'ZjU3NzE5ZWU3OWFlYjQ1MzMyNzI1NTI5NDNlNzZiZjk3ZGVlNWMwZDRkMTU1ZDRiOThlNWUwMjRmOGZlMmZmZnwxanVlYXEyOQ==');
 
 INSERT INTO `admin_user_group`(`id`, `name`)
 VALUES (1, '超级管理员');
@@ -230,4 +230,5 @@ INSERT INTO `admin_user_relate`(`admin_user_group_id`, `admin_user_id`)
 VALUES (1, 1);
 
 INSERT INTO `admin_user_group_relate`(`admin_auth_id`, `admin_user_group_id`)
-VALUES (1, 1),(2, 1);
+VALUES (1, 1),
+       (2, 1);
