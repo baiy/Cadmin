@@ -129,8 +129,6 @@ CREATE TABLE `admin_token`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='登录token';
 
-## 数据库数据
-
 INSERT INTO `admin_auth`(`id`, `name`)
 VALUES (1, '系统设置-用户管理'),
        (2, '系统设置-权限管理');
