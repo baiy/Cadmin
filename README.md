@@ -23,7 +23,7 @@ Cadmin 是一个前后端分离的后台开发项目集合,各项目基于前后
 | &nbsp;&nbsp;&nbsp;-Golang   | [[github](https://github.com/baiy/Cadmin-server-go)]  [[gitee](https://gitee.com/baiy/Cadmin-server-go)] | [访问](server/go) |
 | 客户端 | - | - |
 | &nbsp;&nbsp;&nbsp;-Vue   | [[github](https://github.com/baiy/Cadmin-client-vue)] [[gitee](https://gitee.com/baiy/Cadmin-client-vue)] | [访问](client/vue) |
-| &nbsp;&nbsp;&nbsp;-React   | [[github](https://github.com/baiy/Cadmin-client-react)] [[gitee](https://gitee.com/baiy/Cadmin-client-react)] | [访问](client/vue) |
+| &nbsp;&nbsp;&nbsp;-React   | [[github](https://github.com/baiy/Cadmin-client-react)] [[gitee](https://gitee.com/baiy/Cadmin-client-react)] | [访问](client/react) |
 
 ## 演示
 * vue版前端: <https://baiy.gitee.io/cadmin-client-vue/>
