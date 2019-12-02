@@ -23,7 +23,28 @@ Cadmin 是一个前后端分离的后台开发项目集合,各项目基于前后
 | &nbsp;&nbsp;&nbsp;-Golang   | [[github](https://github.com/baiy/Cadmin-server-go)]  [[gitee](https://gitee.com/baiy/Cadmin-server-go)] | [访问](server/go) |
 | 客户端 | - | - |
 | &nbsp;&nbsp;&nbsp;-Vue   | [[github](https://github.com/baiy/Cadmin-client-vue)] [[gitee](https://gitee.com/baiy/Cadmin-client-vue)] | [访问](client/vue) |
+| &nbsp;&nbsp;&nbsp;-React   | [[github](https://github.com/baiy/Cadmin-client-react)] [[gitee](https://gitee.com/baiy/Cadmin-client-react)] | [访问](client/vue) |
+
+## 演示
+* vue版前端: <https://baiy.gitee.io/cadmin-client-vue/>
+* react版前端: <https://baiy.gitee.io/cadmin-client-react/>
+
+> 1. 演示站点服务端使用Golang版
+> 2. 后端数据库每小时重置数据库
+
+
+## 效果图
+
+|页面| vue | react |
+| --- | --- | --- |
+| 登录 | ![](./_media/demo/vue/01.jpg) |![](./_media/demo/react/01.jpg) |
+| 用户管理 |![](./_media/demo/vue/02.jpg) |![](./_media/demo/react/02.jpg) |
+| 请求管理 |![](./_media/demo/vue/03.jpg) |![](./_media/demo/react/03.jpg) |
+| 菜单管理 |![](./_media/demo/vue/04.jpg) |![](./_media/demo/react/04.jpg) |
+| 权限管理 |![](./_media/demo/vue/05.jpg) |![](./_media/demo/react/05.jpg) |
+| 权限分配 |![](./_media/demo/vue/06.jpg) |![](./_media/demo/react/06.jpg) |
 
 ## 系统结构图 {docsify-ignore}
 
 ![结构图](./_media/global.jpg)
+
